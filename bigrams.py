@@ -30,10 +30,13 @@ def parser(rawstring):
     # find tuple frequencies
     freq_tups = Counter(s_tups)
     logging.debug(freq_tups)
-    # create generator of formatted strings
+    # create list of formatted strings
+    s_list = []
     for w in freq_tups.most_common():
         if w[1] > 1:
-            yield '{0} {1} : {2}'.format(w[0][0], w[0][1], w[1])
+            s_list.append('{0} {1} : {2}'.format(w[0][0], w[0][1], w[1]))
+
+    return s_list
 
 if __name__ == '__main__':
     """Takes string input from oneo r more text files.  Pretty prints output from
