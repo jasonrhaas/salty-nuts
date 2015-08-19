@@ -5,6 +5,7 @@ import sys
 import logging
 from collections import Counter
 
+# Set debug to INFO or DEBUG to get more output
 logging.basicConfig(level=logging.CRITICAL)
 
 
@@ -15,7 +16,7 @@ def parser(rawstring):
     :param rawstring: Input string for the function.
     :type rawstring: str
 
-    :returns: Iterable of nicely formatted strings like
+    :returns: List of nicely formatted strings like
               `<word1> <word2> : <count>`
     """
     # lowercase the string
@@ -39,7 +40,7 @@ def parser(rawstring):
     return s_list
 
 if __name__ == '__main__':
-    """Takes string input from oneo r more text files.  Pretty prints output from
+    """Takes string input from one or more text files.  Pretty prints output from
         the `regparse` function.
     """
 
