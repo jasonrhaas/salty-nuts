@@ -6,7 +6,12 @@ import bigrams
 
 class BigramsChecker(unittest.TestCase):
     def test(self):
-        answer = "like nuts : 3\nlike you : 3\nare you : 2\ni like : 2"
+        answer = [
+                    "like nuts : 3",
+                    "like you : 3",
+                    "are you : 2",
+                    "i like : 2"
+                    ]
         with open('nuts.txt') as f:
             self.assertEqual(bigrams.parser(f.read()), answer)
 
